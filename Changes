@@ -1,6 +1,13 @@
 Revision history for Module::Starter::Plugin::Template::TeTe
 ============================================================
 
+0.05 Tue 02 November 2004
+-------------------------
+
+  * (2 Nov 2004) installation fix
+  	Needed a darned Makefile.PL
+
+
 0.04 Thu 28 October 2004
 ------------------------
 

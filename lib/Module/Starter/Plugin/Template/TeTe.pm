@@ -14,11 +14,11 @@ Module::Starter::Plugin::Template::TeTe - Module::Starter plugin for Text::Templ
 
 =head1 VERSION
 
-This describes version B<0.04> of Module::Starter::Plugin::Template::TeTe
+This describes version B<0.05> of Module::Starter::Plugin::Template::TeTe
 
 =cut
 
-our $VERSION = '0.04';
+our $VERSION = '0.05';
 
 =head1 SYNOPSIS
 

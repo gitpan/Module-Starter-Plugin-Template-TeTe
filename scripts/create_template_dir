@@ -6,11 +6,11 @@ create_template_dir - create a template directory
 
 =head1 VERSION
 
-This describes version B<0.04> of create_template_dir.
+This describes version B<0.05> of create_template_dir.
 
 =cut
 
-our $VERSION = '0.04';
+our $VERSION = '0.05';
 
 =head1 SYNOPSIS
 

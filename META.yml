@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name: Module-Starter-Plugin-Template-TeTe
-version: 0.04
+version: 0.05
 author:
   - |-
     Kathryn Andersen (RUBYKAT) <perlkat AT katspace dot com>
@@ -17,5 +17,5 @@ build_requires:
 provides:
   Module::Starter::Plugin::Template::TeTe:
     file: lib/Module/Starter/Plugin/Template/TeTe.pm
-    version: 0.04
+    version: 0.05
 generated_by: Module::Build version 0.26
