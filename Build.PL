@@ -8,6 +8,7 @@ my $builder = Module::Build->new(
     dist_author         => 'Kathryn Andersen (RUBYKAT) <perlkat AT katspace dot com>',
     dist_version_from   => 'lib/Module/Starter/Plugin/Template/TeTe.pm',
     requires => {
+	'File::Spec' => 0,
 	'Text::Template' => '1.44',
         'Module::Starter' => 1.34,
         'Module::Starter::Plugin::Template' => 0,

@@ -4,7 +4,9 @@ package Module::Starter::Plugin::Template::TeTe;
 use warnings;
 use strict;
 use ExtUtils::Command qw(mkpath);
+use File::Spec;
 use Text::Template;
+use Data::Dumper;
 
 =head1 NAME
 
@@ -12,11 +14,11 @@ Module::Starter::Plugin::Template::TeTe - Module::Starter plugin for Text::Templ
 
 =head1 VERSION
 
-This describes version B<0.01> of Module::Starter::Plugin::Template::TeTe
+This describes version B<0.03> of Module::Starter::Plugin::Template::TeTe
 
 =cut
 
-our $VERSION = '0.01';
+our $VERSION = '0.03';
 
 =head1 SYNOPSIS
 
@@ -40,6 +42,8 @@ methods using the Text::Template template system.
 =head2 new(%args)
 
 This plugin calls the C<new> supermethod and then sets various defaults.
+
+Note that this will also set itself from the @ARGV array.
 
 This takes the following arguments in addition to its parents:
 
@@ -73,7 +77,7 @@ If your module is object-oriented, then it will need a "new" method.
 
 sub new {
     my $class = shift;
-    my $self  = $class->SUPER::new(@_);
+    my $self  = $class->SUPER::new(@_, @ARGV);
 	$self->{DELIMITERS} ||= ['[==', '==]'];
 	$self->{template_dir} ||= '';
     $self->{version} ||= '0.01';
@@ -107,8 +111,10 @@ sub templates {
         {
             if ($file !~ /^\./) # no dotfiles allowed
             {
+                my $fullname =
+                    File::Spec->catfile($self->{template_dir}, $file);
                 # read the file and make its contents the template
-                if (open (FILE, $file)) {
+                if (open (FILE, $fullname)) {
                     my $filetext = do {local $/; <FILE>};
                     close FILE;
                     if ($filetext) {

@@ -1,5 +1,33 @@
 Revision history for Module-Starter-Plugin-Template-TeTe
+========================================================
 
-0.01    Date/time
-        First version, released on an unsuspecting world.
+0.03 Sat Oct  9 2004
+--------------------
 
+Sat Oct  9 19:07:40 EST 2004  perlkat AT katspace.com
+  * fixed bug with reading template files
+  	Ooops.  Forgot the open file needed the dir added to it.
+
+0.02 Sat Oct  9 2004
+--------------------
+
+Sat Oct  9 18:39:54 EST 2004  perlkat AT katspace.com
+  * allow init from ARGV
+  	It occurred to me that one way of not having to write
+  a new script would be to simply inspect the ARGV array...
+
+Sat Oct  9 18:35:31 EST 2004  perlkat AT katspace.com
+  * documentation tweaks
+
+0.01 Sat Oct  9 2004
+--------------------
+
+Sat Oct  9 13:32:30 EST 2004  perlkat AT katspace.com
+  * create template dir
+  	Added ability to create a template directory populated
+  with the default templates.
+
+Sat Oct  9 10:53:37 EST 2004  perlkat AT katspace.com
+  * initial checkin
+  	Making a plugin module for Module::Starter which uses
+  Text::Template to do templating (TeTe is shorter, okay?)
