@@ -1,0 +1,19 @@
+--- #YAML:1.0
+name: Module-Starter-Plugin-Template-TeTe
+version: 0.01
+author: |-
+  Kathryn Andersen (RUBYKAT) <perlkat AT katspace dot com>
+abstract: |-
+  Module::Starter plugin for Text::Template templates
+license: perl
+requires:
+  Module::Starter: 1.34
+  Module::Starter::Plugin::Template: 0
+  Text::Template: 1.44
+build_requires:
+  Test::More: 0
+provides:
+  Module::Starter::Plugin::Template::TeTe:
+    file: lib/Module/Starter/Plugin/Template/TeTe.pm
+    version: 0.01
+generated_by: Module::Build version 0.25
