@@ -1,5 +1,15 @@
-Revision history for Module-Starter-Plugin-Template-TeTe
-========================================================
+Revision history for Module::Starter::Plugin::Template::TeTe
+============================================================
+
+0.04 Thu 28 October 2004
+------------------------
+
+  * (28 Oct 2004) fixing pod coverage
+  	Make it just test the actual module, not the sample modules
+  created by the module.
+
+  * (10 Oct 2004) using Module::DevAid for aid
+
 
 0.03 Sat Oct  9 2004
 --------------------

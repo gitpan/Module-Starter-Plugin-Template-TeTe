@@ -14,11 +14,11 @@ Module::Starter::Plugin::Template::TeTe - Module::Starter plugin for Text::Templ
 
 =head1 VERSION
 
-This describes version B<0.03> of Module::Starter::Plugin::Template::TeTe
+This describes version B<0.04> of Module::Starter::Plugin::Template::TeTe
 
 =cut
 
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
 =head1 SYNOPSIS
 
@@ -466,7 +466,7 @@ BEGIN {
 [==$OUT = join("\n", map{ "use_ok( '$_' );" } @modules);==]
 }
 
-diag( "Testing [==$modules[0]==] ${[==$modules[0]==]}::VERSION" );
+diag( "Testing [==$modules[0]==] ${[==$modules[0]==]::VERSION}" );
 EOF
 
     $templates{'pod.t'} = <<'HERE';
@@ -543,6 +543,22 @@ return %templates;
 
 }
 
+=head1 REQUIRES
+
+    File::Spec
+    Text::Template
+    Module::Starter
+    Module::Starter::Plugin::Template
+
+=head1 INSTALLATION
+
+To install this module, run the following commands:
+
+    perl Build.PL
+    ./Build
+    ./Build test
+    ./Build install
+
 =head1 AUTHOR
 
 Kathryn Andersen (RUBYKAT), C<< <perlkat AT katspace dot com> >>
@@ -554,7 +570,7 @@ at the above address.
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2004 Kathryn Andersen, All Rights Reserved.
+Copyright (c) 2004 Kathryn Andersen
 
 This program is free software; you can redistribute it and/or modify it
 under the same terms as Perl itself.
