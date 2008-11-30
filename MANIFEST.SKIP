@@ -3,8 +3,13 @@
 \bCVS\b
 ,v$
 ^_darcs/
+^\.binaries$
 ^\.boring$
 ^\.darcs-temp-log.text
+^darcs_prebuild.pl$
+^mod_devaid.conf$
+^old_version.txt$
+^version.txt$
 # archives
 .*\.tar\.gz$
 # the TODO file

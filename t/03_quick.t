@@ -1,7 +1,7 @@
 # t/03_quick.t -- tests a quick build with minimal options
 
 #use Test::More qw/no_plan/;
-use Test::More tests => 15;
+use Test::More tests => 16;
 
 use Module::Starter qw(
 	Module::Starter::Simple
@@ -9,22 +9,33 @@ use Module::Starter qw(
 	Module::Starter::Plugin::Template::TeTe);
 ok(1, "used Module::Starter");
 
-ok (chdir 'blib/testing' || chdir '../blib/testing', "chdir 'blib/testing'");
+use_ok( 'File::Path' );
+
+ok (chdir 'blib' || chdir '../blib', "chdir 'blib'");
+if (!-d 'testing')
+{
+    mkpath ('testing', 0, 0775);
+}
+ok (chdir 'testing', "chdir 'testing'");
+my $dirname = 'Sample-Module';
+if (-d $dirname)
+{
+    diag("removing $dirname");
+    rmtree($dirname);
+}
 
 ###########################################################################
 
-ok (Module::Starter->create_distro
-			(
-				modules		=> ['Sample::Module'],
-				author		=> 'Fred Nurk',
-				email		=> 'fred@example.com',
-			),
-	"call Module::Starter->create_distro");
+Module::Starter->create_distro
+(
+ modules		=> ['Sample::Module'],
+ author		=> 'Fred Nurk',
+ email		=> 'fred@example.com',
+ );
 	
 ###########################################################################
 
-ok (chdir 'Sample-Module',
-	"cd Sample-Module");
+ok (chdir $dirname, "cd $dirname");
 
 for (qw( Changes MANIFEST .cvsignore README lib lib/Sample/Module.pm
 	t t/00_dist.t t/01_load.t t/pod.t t/pod-coverage.t )) {

@@ -15,16 +15,11 @@ my $builder = Module::Build->new(
     },
     build_requires => {
         'Test::More' => 0,
+	'File::Path' => 0,
     },
     script_files        => ['scripts/create_template_dir'],
     add_to_cleanup      => [ 'Module-Starter-Plugin-Template-TeTe-*' ],
+    create_makefile_pl => 'traditional',
 );
 
 $builder->create_build_script();
-# create the Makefile.PL if need be
-if (! -f 'Makefile.PL')
-{
-    use Module::Build::Compat;
-    print "creating Makefile.PL\n";
-    Module::Build::Compat->create_makefile_pl('passthrough', $builder);
-}

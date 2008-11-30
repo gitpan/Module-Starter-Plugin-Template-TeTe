@@ -1,15 +1,14 @@
 Build.PL
-Makefile.PL
+Makefile.PL # Will be created by "Build dist"
 Changes
 MANIFEST
 MANIFEST.SKIP
-META.yml # Will be created by "make dist"
+META.yml # Will be created by "Build dist"
 README
 lib/Module/Starter/Plugin/Template/TeTe.pm
 scripts/create_template_dir
 t/00_dist.t
 t/01_load.t
-t/02_ini.t
 t/03_quick.t
 t/04_makemaker.t
 t/05_build.t

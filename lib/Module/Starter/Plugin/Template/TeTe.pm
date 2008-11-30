@@ -14,11 +14,11 @@ Module::Starter::Plugin::Template::TeTe - Module::Starter plugin for Text::Templ
 
 =head1 VERSION
 
-This describes version B<0.05> of Module::Starter::Plugin::Template::TeTe
+This describes version B<0.06> of Module::Starter::Plugin::Template::TeTe
 
 =cut
 
-our $VERSION = '0.05';
+our $VERSION = '0.06';
 
 =head1 SYNOPSIS
 
@@ -375,16 +375,10 @@ my $builder = Module::Build->new(
         'Test::More' => 0,
     },
     add_to_cleanup      => [ '[==${distro}==]-*' ],
+    create_makefile_pl => 'traditional',
 );
 
 $builder->create_build_script();
-# create the Makefile.PL if need be
-if (! -f 'Makefile.PL')
-{
-    use Module::Build::Compat;
-    print "creating Makefile.PL\n";
-    Module::Build::Compat->create_makefile_pl('passthrough', $build);
-}
 EOF
 
 #-------------------------------------------------------------------------#
@@ -510,11 +504,11 @@ EOF
 ^blibdirs$
 ^pm_to_blib$
 ^MakeMaker-\d
-                                                                                                                    
+
 # Module::Build
 ^Build$
 ^_build
-                                                                                                                    
+
 # Temp, old, vi and emacs files.
 ~$
 \.old$
@@ -528,6 +522,7 @@ EOF
 	
 	$templates{'cvsignore'} = <<'EOF';
 blib*
+Build
 Makefile
 Makefile.old
 pm_to_blib*
